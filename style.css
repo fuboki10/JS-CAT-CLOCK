@@ -37,6 +37,7 @@ h4 #clock {
 
 h1, h2, h3, h6 {
   font-family: 'Bungee Shade', cursive;
+  position: relative;
 }
 
 #lolcatImage {

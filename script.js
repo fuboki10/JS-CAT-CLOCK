@@ -122,3 +122,21 @@ var wakeUpEvent = function()
 
 wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
 
+var lunchTimeSelector =  document.getElementById("lunchTimeSelector");
+
+var lunchEvent = function()
+{
+    lunchtime = lunchTimeSelector.value;
+};
+
+lunchTimeSelector.addEventListener("change", lunchEvent);
+
+var napTimeSelector =  document.getElementById("napTimeSelector");
+
+var napEvent = function()
+{
+    naptime = napTimeSelector.value;
+};
+
+napTimeSelector.addEventListener("change", napEvent);
+

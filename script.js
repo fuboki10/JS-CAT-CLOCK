@@ -80,7 +80,7 @@ var updateClock = function()
     message = "Good afternoon!";
   }
 
-  console.log(message);
+  // console.log(message);
   timeEventJS.innerText = message;
   lolCatImageJS.src = img;
 
@@ -91,3 +91,24 @@ updateClock();
 
 var oneSecond = 1000;
 setInterval( updateClock, oneSecond);
+
+var partyButton = document.getElementById("partyTimeButton");
+
+var partyEvent = function()
+{
+	 if (partyTime < 0) 
+    {
+        partyTime = new Date().getHours();
+        partyTimeButton.innerText = "Party Over!";
+        partyTimeButton.style.backgroundColor = "#0A8DAB";
+    }
+    else
+    {
+        partyTime = -1;
+        partyTimeButton.innerText = "Party Time!";
+        partyTimeButton.style.backgroundColor = "#222";
+    }
+};
+
+partyButton.addEventListener("click", partyEvent);
+partyEvent();

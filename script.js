@@ -1,4 +1,4 @@
-var WakeUpTime = 7;
+var wakeUpTime = 7;
 var noon = 12;
 var lunchTime = 12;
 var napTime = lunchTime + 2;
@@ -34,7 +34,7 @@ var showCurrnetTime = function()
 	var clockTime = h + ":" + m + ":" + s + " " + meridian + "!!!";
 
 	clock.innerText = clockTime;
-}
+};
 
 var updateClock = function()
 {
@@ -44,46 +44,50 @@ var updateClock = function()
 	var timeEventJS = document.getElementById('timeEvent');
 	var lolCatImageJS = document.getElementById('lolcatImage');
 
-	if (time == partytime)
+	if (time == partyTime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
+    img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
     message = "Let's party!";
   }
-  else if (time == wakeuptime)
+  else if (time == wakeUpTime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
+    img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
     message = "Wake up!";
   }
-  else if (time == lunchtime)
+  else if (time == lunchTime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
+    img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
     message = "Let's have some lunch!";
   }
-  else if (time == naptime)
+  else if (time == napTime)
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
+    img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
     message = "Sleep tight!";
   }
   else if (time < noon)
   {
-    image = "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg";
+    img = "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg";
     message = "Good morning!";
   }
   else if (time >= evening)
   {
-    image = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cat_sleep.jpg";
+    img = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cat_sleep.jpg";
     message = "Good evening!";
   }
   else
   {
-    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+    img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
     message = "Good afternoon!";
   }
 
+  console.log(message);
   timeEventJS.innerText = message;
   lolCatImageJS.src = img;
 
   showCurrnetTime();
-}
+};
 
 updateClock();
+
+var oneSecond = 1000;
+setInterval( updateClock, oneSecond);

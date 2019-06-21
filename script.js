@@ -112,3 +112,13 @@ var partyEvent = function()
 
 partyButton.addEventListener("click", partyEvent);
 partyEvent();
+
+var wakeUpTimeSelector =  document.getElementById("wakeUpTimeSelector");
+
+var wakeUpEvent = function()
+{
+    wakeuptime = wakeUpTimeSelector.value;
+};
+
+wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
+

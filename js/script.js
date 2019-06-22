@@ -55,7 +55,7 @@ var updateClock = function()
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
     message = "Let's party!";
   }
-  else if (time == wakeUpTime)
+  else if (time >= wakeUpTime && time < wakeUpTime + 1)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
     message = "Wake up!";
@@ -87,7 +87,7 @@ var updateClock = function()
   }
 
   timeEventJS.innerText = message;
-  lolcatImage.src = img;
+  lolCatImageJS.src = img;
 
   showCurrnetTime();
 };

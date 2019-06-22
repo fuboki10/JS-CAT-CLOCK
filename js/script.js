@@ -44,6 +44,8 @@ var updateClock = function()
 	var timeEventJS = document.getElementById('timeEvent');
 	var lolCatImageJS = document.getElementById('lolcatImage');
 
+	console.log(wakeUpTime);
+
 	if (time == partyTime)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
@@ -54,12 +56,12 @@ var updateClock = function()
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
     message = "Wake up!";
   }
-  else if (time == lunchTime)
+  else if (time >= lunchTime && time < lunchtime + 1)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
     message = "Let's have some lunch!";
   }
-  else if (time == napTime)
+  else if (time >= napTime && time < naptime + 1)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
     message = "Sleep tight!";
@@ -80,7 +82,8 @@ var updateClock = function()
     message = "Good afternoon!";
   }
 
-  // console.log(message);
+  console.log(message);
+
   timeEventJS.innerText = message;
   lolCatImageJS.src = img;
 
@@ -89,7 +92,7 @@ var updateClock = function()
 
 updateClock();
 
-var oneSecond = 1000;
+var oneSecond = 100;
 setInterval( updateClock, oneSecond);
 
 var partyButton = document.getElementById("partyTimeButton");
@@ -106,7 +109,7 @@ var partyEvent = function()
     {
         partyTime = -1;
         partyTimeButton.innerText = "Party Time!";
-        partyTimeButton.style.backgroundColor = "#222";
+        partyTimeButton.style.backgroundColor = "#2002";
     }
 };
 
@@ -117,7 +120,9 @@ var wakeUpTimeSelector =  document.getElementById("wakeUpTimeSelector");
 
 var wakeUpEvent = function()
 {
-    wakeuptime = wakeUpTimeSelector.value;
+    wakeUpTime = wakeUpTimeSelector.value;
+    lunchtime = lunchTimeSelector.value;
+    naptime = napTimeSelector.value;
 };
 
 wakeUpTimeSelector.addEventListener("change", wakeUpEvent);
@@ -126,7 +131,9 @@ var lunchTimeSelector =  document.getElementById("lunchTimeSelector");
 
 var lunchEvent = function()
 {
+	wakeUpTime = wakeUpTimeSelector.value;
     lunchtime = lunchTimeSelector.value;
+    naptime = napTimeSelector.value;
 };
 
 lunchTimeSelector.addEventListener("change", lunchEvent);
@@ -135,6 +142,8 @@ var napTimeSelector =  document.getElementById("napTimeSelector");
 
 var napEvent = function()
 {
+	wakeUpTime = wakeUpTimeSelector.value;
+	lunchtime = lunchTimeSelector.value;
     naptime = napTimeSelector.value;
 };
 

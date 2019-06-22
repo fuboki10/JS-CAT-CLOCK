@@ -55,17 +55,17 @@ var updateClock = function()
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
     message = "Let's party!";
   }
-  else if (time >= wakeUpTime && time < wakeUpTime + 1)
+  else if (time == wakeUpTime)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
     message = "Wake up!";
   }
-  else if (time >= lunchTime && time < lunchTime + 1)
+  else if (time >= lunchTime)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
     message = "Let's have some lunch!";
   }
-  else if (time >= napTime && time < napTime + 1)
+  else if (time >= napTime)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
     message = "Sleep tight!";

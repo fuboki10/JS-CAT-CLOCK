@@ -8,8 +8,9 @@ var evening = 18;
 var lunchTimeSelector =  document.getElementById("lunchTimeSelector");
 var napTimeSelector =  document.getElementById("napTimeSelector");
 var wakeUpTimeSelector =  document.getElementById("wakeUpTimeSelector");
-
 var partyButton = document.getElementById("partyTimeButton");
+
+var partyAudio = new Audio('voices/Cat-meow-audio-clip.mp3');
 
 var showCurrnetTime = function()
 {
@@ -49,7 +50,8 @@ var updateClock = function()
 	var img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
 	var timeEventJS = document.getElementById('timeEvent');
 	var lolCatImageJS = document.getElementById('lolcatImage');
-  	
+  
+
   if (time == partyTime)
   {
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
@@ -104,6 +106,7 @@ var partyEvent = function()
         partyTime = new Date().getHours();
         partyTimeButton.innerText = "Party Over!";
         partyTimeButton.style.backgroundColor = "#0A8DAB";
+        partyAudio.play();
     }
     else
     {

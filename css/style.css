@@ -64,7 +64,9 @@ blockquote:after { content: '"'; }
 }
 
 #wakeUpTimeSelector, #lunchTimeSelector, #napTimeSelector {
-  padding: 10px 0;
+  padding: 6px 0;
+  margin : 5px auto;
+  text-align: right;
 }
 #partyTimeButton {
   background-color: #222;

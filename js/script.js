@@ -49,61 +49,45 @@ var updateClock = function()
 	var img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
 	var timeEventJS = document.getElementById('timeEvent');
 	var lolCatImageJS = document.getElementById('lolcatImage');
-  
-  console.log(lunchTime);
-	
+  	
   if (time == partyTime)
   {
-    console.log("party");
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
     message = "Let's party!";
   }
   else if (time == wakeUpTime)
   {
-    console.log("wake"); 
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
     message = "Wake up!";
   }
   else if (time >= lunchTime && time < lunchTime + 1)
   {
-    console.log("lnch");
-
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
     message = "Let's have some lunch!";
   }
   else if (time >= napTime && time < napTime + 1)
   {
-    console.log("nap");
-
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
     message = "Sleep tight!";
   }
   else if (time < noon)
   {
-    console.log("noon");
-
     img = "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg";
     message = "Good morning!";
   }
   else if (time >= evening)
   {
-    console.log("evening");
-
     img = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cat_sleep.jpg";
     message = "Good evening!";
   }
   else
   {
-    console.log("afternoon");
-
     img = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
     message = "Good afternoon!";
   }
 
-  console.log(message);
-
   timeEventJS.innerText = message;
-  lolCatImageJS.src = img;
+  lolcatImage.src = img;
 
   showCurrnetTime();
 };
